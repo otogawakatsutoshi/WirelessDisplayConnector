@@ -30,8 +30,8 @@ jobs:
     - name: upload artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: net6.0-artifact
-        path: bin/Release/net8.0-windows/win-x64/WirelessDisplayConnector.exe
+        name: net8.0-artifact
+        path: bin/Release/net8.0-windows/win-x64/publish/WirelessDisplayConnector.exe
         if-no-files-found: error
         
     - name: Release tag
