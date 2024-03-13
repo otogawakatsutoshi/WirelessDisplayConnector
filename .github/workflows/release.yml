@@ -21,7 +21,7 @@ jobs:
     - name: Install .NET Core
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 8.0.x
 
     - uses: actions/checkout@v4
     - name: Build
@@ -31,7 +31,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: net6.0-artifact
-        path: cbin/Release/net6.0-windows/WirelessDisplayConnector.exe
+        path: bin/Release/net6.0-windows/WirelessDisplayConnector.exe
         if-no-files-found: error
         
     - name: Release tag
