@@ -19,7 +19,7 @@ jobs:
 
     # Install the .NET Core workload
     - name: Install .NET Core
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
 
@@ -28,19 +28,20 @@ jobs:
       run: dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
 
     - name: upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: net8.0-artifact
         path: bin/Release/net8.0-windows/win-x64/publish/WirelessDisplayConnector.exe
         if-no-files-found: error
         
     - name: Release tag
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         body: |
           Changes in this Release
           - First Change
           - Second Change
+        artifacts: net8.0-artifact
         draft: false
         prerelease: false
