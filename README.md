@@ -12,5 +12,7 @@ Windows+Kでワイヤレスディスプレイ接続画面を出しているだ�
 
 ## 使い方
 
-WirelessDisplayConnectorのexeファイルをダウンロードして、
+dotnet8.0-artifacts.zipを解凍すると、WirelessDisplayConnector.exeファイルがあるので、
 デスクトップなりなんなり、目がつくところにおいてください。
+
+なんか、気が向いたらインストーラーにするやもしれません。
