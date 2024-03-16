@@ -31,7 +31,7 @@ jobs:
     #   uses: actions/upload-artifact@v4
     #   with:
     #     name: net8.0-artifact
-    #     path: bin/Release/net8.0-windows/win-x64/publish/WirelessDisplayConnector.exe
+    #     path: App/bin/Release/net8.0-windows/win-x64/publish/WirelessDisplayConnector.exe
     #     if-no-files-found: error
         
     - name: Release tag
@@ -43,6 +43,6 @@ jobs:
           - First Change
           - Second Change
         files: |
-          bin/Release/net8.0-windows/win-x64/publish/WirelessDisplayConnector.exe
+          App/bin/Release/net8.0-windows/win-x64/publish/WirelessDisplayConnector.exe
         draft: true
         prerelease: false

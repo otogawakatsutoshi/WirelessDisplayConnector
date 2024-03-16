@@ -7,14 +7,11 @@
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <ApplicationIcon>./ico/icon.ico</ApplicationIcon>
+    <ApplicationIcon>../assets/ico/icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.4.1" />
   </ItemGroup>
 
-<!-- <ItemGroup>
-  <Resource Include="./ico/icon.ico" />
-</ItemGroup>` -->
 </Project>

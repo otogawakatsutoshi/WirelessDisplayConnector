@@ -2,7 +2,7 @@
 using Microsoft.Management.Infrastructure;
 using System.Text.RegularExpressions;
 
-namespace WirelessDisplayConnector;
+namespace App;
 
 class Program
 {
@@ -12,7 +12,6 @@ class Program
         Connector.Launch();
     }
 }
-
 
 partial class Connector
 {
@@ -76,7 +75,7 @@ partial class Connector
 
         var judge = false;
         // wifi-2とか。
-        string pattern = @"\Wi-Fi\b";
+        string search = "Wi-Fi";
 
         using (var session = CimSession.Create(null))
         {
@@ -90,7 +89,7 @@ partial class Connector
                 var minor = instance.CimInstanceProperties["DriverMinorNdisVersion"].Value as byte?;
 
                 // name Wifiでかつmiracast対応のものを探す。
-                if (Regex.IsMatch(name, pattern))
+                if (name.IndexOf(search) < 0)
                 {
                     if ((major == MiracastSupportMajorVersion && minor >= MiracastSupportMinorVersion ) || (major > MiracastSupportMajorVersion))
                     {
